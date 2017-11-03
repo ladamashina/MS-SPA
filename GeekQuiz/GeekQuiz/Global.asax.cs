@@ -22,7 +22,7 @@ namespace GeekQuiz
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            SimpleInjectorWebInitializer.Initialize();
+           // SimpleInjectorResolver.Initialize();
             SimpleInjectiorWebAPIInitialaizer.Initialize();
         }
     }

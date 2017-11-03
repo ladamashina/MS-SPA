@@ -1,6 +1,7 @@
 using System;
 using System.Reflection;
 using GeekQuiz.Controllers;
+using SimpleInjector.Lifestyles;
 
 [assembly: WebActivator.PostApplicationStartMethod(typeof(GeekQuiz.App_Start.SimpleInjectorWebInitializer), "Initialize")]
 
@@ -24,7 +25,7 @@ namespace GeekQuiz.App_Start
 
     public static class SimpleInjectorWebInitializer
     {
-        /// <summary>Initialize the container and register it as Web API Dependency Resolver.</summary>
+       
         public static void Initialize()
         {
             var container = new Container();
@@ -33,12 +34,10 @@ namespace GeekQuiz.App_Start
             InitializeContainer(container);
 
             container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
-            //container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
+            
        
             container.Verify();
-            
-            //GlobalConfiguration.Configuration.DependencyResolver =
-            //    new SimpleInjectorWebApiDependencyResolver(container);
+           
 
             DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
         }
@@ -59,5 +58,32 @@ namespace GeekQuiz.App_Start
         }
 
     }
-    
+    public class SimpleInjectiorWebAPIInitialaizer
+    {
+        public static void Initialize()
+        {
+            var container = new Container();
+            container.Options.DefaultScopedLifestyle = new AsyncScopedLifestyle();
+
+            InitializeContainer(container);
+            // This is an extension method from the integration package.
+            container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
+
+
+            container.Verify();
+
+            GlobalConfiguration.Configuration.DependencyResolver =
+                new SimpleInjectorWebApiDependencyResolver(container);
+
+            //    new SimpleInjectorWebApiDependencyResolver(container);
+        }
+
+        private static void InitializeContainer(Container container)
+        {
+            container.Register<TriviaContext>(Lifestyle.Scoped);
+            container.Register<TriviaQuestion>(Lifestyle.Scoped);
+            container.Register<TriviaOption>(Lifestyle.Scoped);
+            container.Register<TriviaAnswer>(Lifestyle.Scoped);
+        }
+    }
 }
