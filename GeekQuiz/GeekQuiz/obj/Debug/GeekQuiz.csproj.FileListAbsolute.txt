@@ -123,3 +123,12 @@ C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\Microsoft.AI.WindowsServer.xml
 C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\Microsoft.AI.Web.xml
 C:\repository\MS-SPA\GeekQuiz\GeekQuiz\obj\Debug\GeekQuiz.dll
 C:\repository\MS-SPA\GeekQuiz\GeekQuiz\obj\Debug\GeekQuiz.pdb
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\SimpleInjector.dll
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\SimpleInjector.Integration.WebApi.dll
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\WebActivator.dll
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\SimpleInjector.xml
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\SimpleInjector.Integration.WebApi.xml
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\SimpleInjector.Integration.Web.dll
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\SimpleInjector.Integration.Web.Mvc.dll
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\SimpleInjector.Integration.Web.xml
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\SimpleInjector.Integration.Web.Mvc.xml

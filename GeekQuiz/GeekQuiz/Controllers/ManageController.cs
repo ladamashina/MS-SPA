@@ -13,7 +13,7 @@ namespace GeekQuiz.Controllers
     [Authorize]
     public class ManageController : Controller
     {
-        private ApplicationSignInManager _signInManager;
+        private readonly ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
 
