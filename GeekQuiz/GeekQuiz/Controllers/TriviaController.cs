@@ -17,9 +17,7 @@ namespace GeekQuiz.Controllers
     {
         private readonly TriviaContext _db;
 
-        //public TriviaController()
-        //{
-        //}
+
 
         public TriviaController(TriviaContext db)
         {

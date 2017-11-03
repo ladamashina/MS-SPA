@@ -209,7 +209,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\SimpleInjectiorWebAPIInitialaizer.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -232,8 +231,6 @@
     <Compile Include="Models\TriviaOption.cs" />
     <Compile Include="Models\TriviaQuestion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\IAccountService.cs" />
-    <Compile Include="Services\MyAccountServicecs.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
