@@ -132,3 +132,14 @@ C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\SimpleInjector.Integration.Web.dll
 C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\SimpleInjector.Integration.Web.Mvc.dll
 C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\SimpleInjector.Integration.Web.xml
 C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\SimpleInjector.Integration.Web.Mvc.xml
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\GeekQuiz.DI.dll
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\GeekQuiz.DI.pdb
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\GeekQuiz.DI.dll.config
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\GeekQuiz.Core.dll
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\GeekQuiz.Core.pdb
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\GeekQuiz.Core.dll.config
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\AspNet.WebApi.HtmlMicrodataFormatter.dll
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\System.Diagnostics.DiagnosticSource.dll
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\System.Diagnostics.DiagnosticSource.xml

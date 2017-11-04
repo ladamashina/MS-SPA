@@ -8,8 +8,10 @@ using System.Data.Entity;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http.Description;
-using GeekQuiz.Models;
+using GeekQuiz.Core;
 
+using GeekQuiz.Models;
+using GeekQuiz.Di;
 namespace GeekQuiz.Controllers
 {
     [Authorize]
