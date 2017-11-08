@@ -18,14 +18,14 @@
                 $scope.title = "loading question...";
                 $scope.options = [];
 
-                $http.get("/api/trivia").then(function (res) {
+                $http.get("http://localhost:51359/api/trivia").then(function (res) {
                     var data = res.data;
                     $scope.options = data.options;
                     $scope.title = data.title;
                     $scope.answered = false;
                     $scope.working = false;
                 }).catch(function (res) {
-                    $scope.title = "Oops... something went wrong";
+                    $scope.title = "Не работает API";
                     $scope.working = false;
                 });
             };
@@ -39,7 +39,7 @@
                             $scope.correctAnswer = (data === true);
                             $scope.working = false;
                         }).catch (function(res) {
-                        $scope.title = "Oops... something went wrong";
+                        $scope.title = "Сериалзация сломалась";
                         $scope.working = false;
                     });
                 };

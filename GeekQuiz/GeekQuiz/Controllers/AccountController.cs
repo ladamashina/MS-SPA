@@ -13,7 +13,7 @@ using GeekQuiz.Models;
 
 namespace GeekQuiz.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
