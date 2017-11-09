@@ -143,3 +143,6 @@ C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\Microsoft.AspNet.TelemetryCorrelation
 C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\System.Diagnostics.DiagnosticSource.dll
 C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\System.Diagnostics.DiagnosticSource.xml
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\System.Web.Cors.dll
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\System.Web.Http.Cors.dll
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\System.Web.Http.Cors.xml

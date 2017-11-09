@@ -4,11 +4,11 @@ using System.Web.Http.Description;
 using System.Xml.Linq;
 using AspNet.WebApi.HtmlMicrodataFormatter;
 
-// This part configures HtmlMicrodataFormatter to format responses as html: 
-[assembly: WebActivator.PreApplicationStartMethod(typeof(GeekQuiz.DI.App_Start.HtmlMicrodataFormatterActivator), "ConfigureHtmlMicrodataFormatter")]
+//// This part configures HtmlMicrodataFormatter to format responses as html: 
+//[assembly: WebActivator.PreApplicationStartMethod(typeof(GeekQuiz.DI.App_Start.HtmlMicrodataFormatterActivator), "ConfigureHtmlMicrodataFormatter")]
 
-// This part configures routes that generate documentation, forms and links for your project at ~/api and ~/api/doc/{typeName}:
-[assembly: WebActivator.PreApplicationStartMethod(typeof(GeekQuiz.DI.App_Start.HtmlMicrodataFormatterActivator), "ConfigureDocumentationProvider")]
+//// This part configures routes that generate documentation, forms and links for your project at ~/api and ~/api/doc/{typeName}:
+//[assembly: WebActivator.PreApplicationStartMethod(typeof(GeekQuiz.DI.App_Start.HtmlMicrodataFormatterActivator), "ConfigureDocumentationProvider")]
 
 namespace GeekQuiz.DI.App_Start
 {

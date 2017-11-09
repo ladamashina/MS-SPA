@@ -71,7 +71,6 @@ C:\repository\MS-SPA\GeekQuiz\GeekQuiz.Api\bin\Microsoft.AspNet.Identity.EntityF
 C:\repository\MS-SPA\GeekQuiz\GeekQuiz.Api\bin\Owin.dll
 C:\repository\MS-SPA\GeekQuiz\GeekQuiz.Api\bin\GeekQuiz.Core.pdb
 C:\repository\MS-SPA\GeekQuiz\GeekQuiz.Api\bin\GeekQuiz.Core.dll.config
-C:\repository\MS-SPA\GeekQuiz\GeekQuiz.Api\bin\EntityFramework.xml
 C:\repository\MS-SPA\GeekQuiz\GeekQuiz.Api\bin\Microsoft.AspNet.Identity.Core.xml
 C:\repository\MS-SPA\GeekQuiz\GeekQuiz.Api\bin\Microsoft.AspNet.Identity.Owin.xml
 C:\repository\MS-SPA\GeekQuiz\GeekQuiz.Api\bin\Microsoft.Owin.xml
@@ -108,3 +107,6 @@ C:\repository\MS-SPA\GeekQuiz\GeekQuiz.Api\bin\System.Web.Razor.xml
 C:\repository\MS-SPA\GeekQuiz\GeekQuiz.Api\bin\System.Web.WebPages.Razor.xml
 C:\repository\MS-SPA\GeekQuiz\GeekQuiz.Api\bin\System.Web.WebPages.xml
 C:\repository\MS-SPA\GeekQuiz\GeekQuiz.Api\bin\System.Web.WebPages.Deployment.xml
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz.Api\bin\System.Web.Cors.dll
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz.Api\bin\System.Web.Http.Cors.dll
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz.Api\bin\System.Web.Http.Cors.xml

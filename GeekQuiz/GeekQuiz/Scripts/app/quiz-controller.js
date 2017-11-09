@@ -22,6 +22,7 @@
                     var data = res.data;
                     $scope.options = data.options;
                     $scope.title = data.title;
+                    console.log(data);
                     $scope.answered = false;
                     $scope.working = false;
                 }).catch(function (res) {
@@ -34,7 +35,7 @@
                     $scope.working = true;
                     $scope.answered = true;
 
-                    $http.post("/api/trivia", { 'questionId': option.questionId, 'optionId': option.id }).then(function (res) {
+                    $http.post("http://localhost:51359/api/trivia", { 'questionId': option.questionId, 'optionId': option.id }).then(function (res) {
                         var data = res.data;
                             $scope.correctAnswer = (data === true);
                             $scope.working = false;

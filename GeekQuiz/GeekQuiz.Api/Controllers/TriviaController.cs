@@ -1,14 +1,17 @@
 ﻿using System.Data.Entity;
 using System.Linq;
+using System.Net.Mail;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using GeekQuiz.Core;
+using System.Web.Http.Cors;
 
 namespace GeekQuiz.Api.Controllers
 {
-   // [Authorize]
+    // [Authorize]
+    
     public class TriviaController : ApiController
     {
         private readonly TriviaContext _db;
@@ -48,10 +51,10 @@ namespace GeekQuiz.Api.Controllers
         [ResponseType(typeof(TriviaQuestion))]
         public async Task<IHttpActionResult> Get()
         {
-            var userId = User.Identity.Name;
-
+            // var userId = User.Identity.Name;
+            var userId = "test@mail.ru";
             TriviaQuestion nextQuestion = await this.NextQuestionAsync(userId);
-
+            
             if (nextQuestion == null)
             {
                 return this.NotFound();

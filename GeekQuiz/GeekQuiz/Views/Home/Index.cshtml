@@ -1,7 +1,23 @@
 ﻿@{
     ViewBag.Title = "Play";
 }
+<script>
+    // TODO: Replace with the URL of your WebService app
+    var serviceUrl = 'http://localhost:51359/api/trivia';
 
+    function sendRequest() {
+        var method = $('#method').val();
+
+        $.ajax({
+            type: method,
+            url: serviceUrl
+        }).done(function (data) {
+            $('#value1').text(data);
+        }).error(function (jqXHR, textStatus, errorThrown) {
+            $('#value1').text(jqXHR.responseText || textStatus);
+        });
+    }
+</script>
 <div id="bodyContainer" ng-app="QuizApp">
     <section id="content">
         <div class="container">

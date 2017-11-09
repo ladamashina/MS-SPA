@@ -21,13 +21,16 @@ namespace GeekQuiz.Core
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("aspnet-GeekQuiz-20171031123123", throwIfV1Schema: false)
         {
+            this.Configuration.ProxyCreationEnabled = false;
         }
 
         public static ApplicationDbContext Create()
         {
+
             return new ApplicationDbContext();
         }
     }
