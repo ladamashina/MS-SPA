@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Net.Mail;
 using System.Threading;
@@ -34,24 +35,19 @@ namespace GeekQuiz.Api.Controllers
         }
         private async Task<TriviaQuestion> NextQuestionAsync(string userId)
         {
-            var lastQuestionId = await this._db.TriviaAnswers
-                .Where(a => a.UserId == userId)
-                .GroupBy(a => a.QuestionId)
-                .Select(g => new { QuestionId = g.Key, Count = g.Count() })
-                .OrderByDescending(q => new { q.Count, QuestionId = q.QuestionId })
-                .Select(q => q.QuestionId)
-                .FirstOrDefaultAsync();
+            var random = new Random();
+            var nextQuestionId = random.Next(1,44)  ;
 
             var questionsCount = await this._db.TriviaQuestions.CountAsync();
 
-            var nextQuestionId = (lastQuestionId % questionsCount) + 1;
+            //var nextQuestionId = (lastQuestionId % questionsCount) + 1;
             return await this._db.TriviaQuestions.FindAsync(CancellationToken.None, nextQuestionId);
         }
         // GET api/Trivia
         [ResponseType(typeof(TriviaQuestion))]
         public async Task<IHttpActionResult> Get()
         {
-            // var userId = User.Identity.Name;
+           // var userId = User.Identity.Name;
             var userId = "test@mail.ru";
             TriviaQuestion nextQuestion = await this.NextQuestionAsync(userId);
             

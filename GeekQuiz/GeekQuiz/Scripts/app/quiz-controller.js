@@ -37,8 +37,9 @@
 
                     $http.post("http://localhost:51359/api/trivia", { 'questionId': option.questionId, 'optionId': option.id }).then(function (res) {
                         var data = res.data;
-                            $scope.correctAnswer = (data === true);
+                            $scope.correctAnswer = data === true;
                             $scope.working = false;
+                        console.log(data);
                         }).catch (function(res) {
                         $scope.title = "Сериалзация сломалась";
                         $scope.working = false;
