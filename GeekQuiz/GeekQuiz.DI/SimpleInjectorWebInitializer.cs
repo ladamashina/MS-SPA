@@ -39,17 +39,17 @@ namespace GeekQuiz.Di
         }
         public static void Initialize()
         {
-            var container = new Container();
-            container.Options.DefaultScopedLifestyle = new WebRequestLifestyle();
+            //var container = new Container();
+            //container.Options.DefaultScopedLifestyle = new WebRequestLifestyle();
 
-            InitializeContainer(container);
+            //InitializeContainer(container);
 
-            container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
+            //container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
 
-            container.Verify();
+            //container.Verify();
 
 
-            System.Web.Mvc.DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
+            //System.Web.Mvc.DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
         }
 
         private static void InitializeContainer(Container container)
