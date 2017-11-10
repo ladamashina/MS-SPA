@@ -13,6 +13,7 @@ using SimpleInjector.Integration.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
+using Owin;
 
 
 [assembly: WebActivator.PostApplicationStartMethod(typeof(GeekQuiz.Di.SimpleInjectorInitializer), "Initialize")]
@@ -23,7 +24,8 @@ namespace GeekQuiz.Di
 
     public static class SimpleInjectorInitializer
     {
-        public static void Initialize()
+
+        public static Container GetContainer()
         {
             var container = new Container();
             container.Options.DefaultScopedLifestyle = new WebRequestLifestyle();
@@ -34,13 +36,16 @@ namespace GeekQuiz.Di
 
             container.Verify();
 
-            GlobalConfiguration.Configuration.DependencyResolver = new SimpleInjectorWebApiDependencyResolver(container);
+            //GlobalConfiguration.Configuration.DependencyResolver = new SimpleInjectorWebApiDependencyResolver(container);
 
-            System.Web.Mvc.DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
+            //System.Web.Mvc.DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
+            return container;
         }
 
         private static void InitializeContainer(Container container)
         {
+
+
             container.Register<ApplicationSignInManager>(Lifestyle.Scoped);
             container.Register<ApplicationUserManager>(Lifestyle.Scoped);
             container.Register<ApplicationDbContext>(Lifestyle.Scoped);
@@ -54,6 +59,25 @@ namespace GeekQuiz.Di
 
             container.Register<TriviaContext>(Lifestyle.Scoped);
         }
+
+
+        public static void Initialize()
+        {
+            var container = new Container();
+            container.Options.DefaultScopedLifestyle = new WebRequestLifestyle();
+
+            InitializeContainer(container);
+
+            container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
+
+            container.Verify();
+
+           
+            System.Web.Mvc.DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
+        }
+
+       
+
     }
 
     

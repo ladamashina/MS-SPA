@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using GeekQuiz.Di;
 using Newtonsoft.Json.Serialization;
+using Owin;
+using SimpleInjector.Integration.WebApi;
 
 namespace GeekQuiz.Api
 {
@@ -11,14 +14,15 @@ namespace GeekQuiz.Api
     {
         
           
-        public static void Register(HttpConfiguration config)
+        public static void Register(IAppBuilder app)
         {
-            
+           var container =  SimpleInjectorInitializer.GetContainer(); //simple injector
+            var config = new HttpConfiguration();
+            app.UseWebApi(config);
             config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
             // Web API configuration and services
             config.EnableCors();
             var formatters = GlobalConfiguration.Configuration.Formatters;
-
             formatters.Remove(formatters.XmlFormatter);
 
 
@@ -33,6 +37,7 @@ namespace GeekQuiz.Api
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+            config.DependencyResolver = new SimpleInjectorWebApiDependencyResolver(container);
         }
     }
 }

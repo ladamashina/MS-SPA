@@ -7,8 +7,11 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using GeekQuiz.Di;
+using GeekQuiz.DI;
 using GeekQuiz.Models;
 using Microsoft.AspNet.Identity.Owin;
+using SimpleInjector.Integration.Web.Mvc;
+using SimpleInjector.Integration.WebApi;
 
 
 namespace GeekQuiz

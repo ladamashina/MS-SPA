@@ -1,14 +1,10 @@
-﻿using GeekQuiz.Core;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using GeekQuiz.Core;
 
-
-namespace GeekQuiz.Models
+namespace GeekQuiz.DI
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Data.Entity;
-    using System.Linq;
-    using System.Web;
-
     public class TriviaDatabaseInitializer : CreateDatabaseIfNotExists<TriviaContext>
     {
         protected override void Seed(TriviaContext context)
