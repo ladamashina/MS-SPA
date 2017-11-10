@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using GeekQuiz.Di;
 using Newtonsoft.Json.Serialization;
+using SimpleInjector.Integration.WebApi;
 
 namespace GeekQuiz
 {
@@ -11,7 +13,7 @@ namespace GeekQuiz
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-
+            var container = SimpleInjectorInitializer.GetContainer();
             // Use camel case for JSON data.
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver =
                 new CamelCasePropertyNamesContractResolver();
@@ -27,6 +29,7 @@ namespace GeekQuiz
             // Remove xml default serializer
             var appXmlType = config.Formatters.XmlFormatter.SupportedMediaTypes.FirstOrDefault(t => t.MediaType == "application/xml");
             config.Formatters.XmlFormatter.SupportedMediaTypes.Remove(appXmlType);
+            config.DependencyResolver = new SimpleInjectorWebApiDependencyResolver(container);
         }
     }
 }

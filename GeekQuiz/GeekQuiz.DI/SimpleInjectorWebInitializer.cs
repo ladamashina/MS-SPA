@@ -35,11 +35,21 @@ namespace GeekQuiz.Di
             container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
 
             container.Verify();
-
-            //GlobalConfiguration.Configuration.DependencyResolver = new SimpleInjectorWebApiDependencyResolver(container);
-
-            //System.Web.Mvc.DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
             return container;
+        }
+        public static void Initialize()
+        {
+            var container = new Container();
+            container.Options.DefaultScopedLifestyle = new WebRequestLifestyle();
+
+            InitializeContainer(container);
+
+            container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
+
+            container.Verify();
+
+
+            System.Web.Mvc.DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
         }
 
         private static void InitializeContainer(Container container)
@@ -61,20 +71,7 @@ namespace GeekQuiz.Di
         }
 
 
-        public static void Initialize()
-        {
-            var container = new Container();
-            container.Options.DefaultScopedLifestyle = new WebRequestLifestyle();
-
-            InitializeContainer(container);
-
-            container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
-
-            container.Verify();
-
-           
-            System.Web.Mvc.DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
-        }
+     
 
        
 
