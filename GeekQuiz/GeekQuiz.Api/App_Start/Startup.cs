@@ -13,7 +13,7 @@ namespace GeekQuiz.Api
     {
         public void Configuration(IAppBuilder app)
         {
-            
+            System.Data.Entity.Database.SetInitializer(new TriviaDatabaseInitializer());
             WebApiConfig.Register(app);
            
         }

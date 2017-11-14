@@ -34,7 +34,7 @@ namespace GeekQuiz.Api
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
+                routeTemplate: "{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
             config.DependencyResolver = new SimpleInjectorWebApiDependencyResolver(container);

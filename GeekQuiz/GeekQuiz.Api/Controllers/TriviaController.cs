@@ -56,7 +56,7 @@ namespace GeekQuiz.Api.Controllers
                 return this.NotFound();
             }
 
-            return this.Ok(nextQuestion);
+            return this.Ok(nextQuestion.ToString().ToLowerInvariant());
         }
         private async Task<bool> StoreAsync(TriviaAnswer answer)
         {
