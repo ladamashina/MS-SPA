@@ -146,3 +146,6 @@ C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\System.Diagnostics.DiagnosticSource.x
 C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\System.Web.Cors.dll
 C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\System.Web.Http.Cors.dll
 C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\System.Web.Http.Cors.xml
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\GeekQuiz.Auth.dll
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\GeekQuiz.Auth.pdb
+C:\repository\MS-SPA\GeekQuiz\GeekQuiz\bin\GeekQuiz.Auth.dll.config

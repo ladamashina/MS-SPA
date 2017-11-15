@@ -10,7 +10,7 @@ using GeekQuiz.Models;
 
 namespace GeekQuiz.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class ManageController : Controller
     {
         private readonly ApplicationSignInManager _signInManager;

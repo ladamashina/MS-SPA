@@ -222,13 +222,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <None Include="App_Start\SimpleInjectorWebInitializer.csold" />
-    <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <None Include="Controllers\TriviaController.csold" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -246,15 +243,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <None Include="Models\IdentityModels.csold" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <None Include="Models\TriviaAnswer.csold" />
-    <None Include="Models\TriviaContext.csold" />
-    <None Include="Models\TriviaDatabaseInitializer.csold" />
-    <None Include="Models\TriviaOption.csold" />
-    <None Include="Models\TriviaQuestion.csold" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Startup.cs" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -333,6 +323,10 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GeekQuiz.Auth\GeekQuiz.Auth.csproj">
+      <Project>{1589a2cf-f2f9-4b7b-bf79-dd0ea50a1930}</Project>
+      <Name>GeekQuiz.Auth</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GeekQuiz.Core\GeekQuiz.Core.csproj">
       <Project>{96BD57B2-C841-4219-ACEB-BE33AB053AEC}</Project>
       <Name>GeekQuiz.Core</Name>

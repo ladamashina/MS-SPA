@@ -7,7 +7,7 @@ using System.Web.Http.Cors;
 
 namespace GeekQuiz.Controllers
 {
-    // [Authorize]
+    [Authorize]
    
     public class HomeController : Controller
     {
@@ -27,7 +27,7 @@ namespace GeekQuiz.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "www.Lenengrad-spb.ru";
 
             return View();
         }

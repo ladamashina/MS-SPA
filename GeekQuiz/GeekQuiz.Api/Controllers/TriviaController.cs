@@ -1,13 +1,16 @@
 ﻿using System;
-using System.Data.Entity;
+using System.Collections.Generic;
 using System.Linq;
-using System.Net.Mail;
-using System.Threading;
 using System.Threading.Tasks;
+
+
+using System.Data.Entity;
 using System.Web.Http;
 using System.Web.Http.Description;
 using GeekQuiz.Core;
-using System.Web.Http.Cors;
+
+
+
 
 namespace GeekQuiz.Api.Controllers
 {
@@ -33,22 +36,29 @@ namespace GeekQuiz.Api.Controllers
 
             base.Dispose(disposing);
         }
+      
         private async Task<TriviaQuestion> NextQuestionAsync(string userId)
         {
-            var random = new Random();
-            var nextQuestionId = random.Next(1,44)  ;
+            var lastQuestionId = await this._db.TriviaAnswers
+                .Where(a => a.UserId == userId)
+                .GroupBy(a => a.QuestionId)
+                .Select(g => new { QuestionId = g.Key, Count = g.Count() })
+                .OrderByDescending(q => q.Count)
+                .ThenByDescending(q => q.QuestionId)
+                .Select(q => q.QuestionId)
+                .FirstOrDefaultAsync();
 
             var questionsCount = await this._db.TriviaQuestions.CountAsync();
 
-            //var nextQuestionId = (lastQuestionId % questionsCount) + 1;
-            return await this._db.TriviaQuestions.FindAsync(CancellationToken.None, nextQuestionId);
+            var nextQuestionId = (lastQuestionId % questionsCount) + 1;
+            return await this._db.TriviaQuestions.Include(q => q.Options).FirstOrDefaultAsync(q => q.Id == nextQuestionId);
         }
         // GET api/Trivia
         [ResponseType(typeof(TriviaQuestion))]
         public async Task<IHttpActionResult> Get()
         {
-           // var userId = User.Identity.Name;
-            var userId = "test@mail.ru";
+            var userId = User.Identity.Name;
+           // var userId = "test@mail.ru";
             TriviaQuestion nextQuestion = await this.NextQuestionAsync(userId);
             
             if (nextQuestion == null)
@@ -56,7 +66,7 @@ namespace GeekQuiz.Api.Controllers
                 return this.NotFound();
             }
 
-            return this.Ok(nextQuestion.ToString().ToLowerInvariant());
+            return this.Ok(nextQuestion);
         }
         private async Task<bool> StoreAsync(TriviaAnswer answer)
         {

@@ -1,8 +1,6 @@
 
 using System.Web.Http;
 using SimpleInjector;
-using SimpleInjector.Integration.WebApi;
-
 using GeekQuiz.Core;
 using System.Web;
 using Microsoft.Owin;
@@ -13,7 +11,7 @@ using SimpleInjector.Integration.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
-using Owin;
+
 
 
 [assembly: WebActivator.PostApplicationStartMethod(typeof(GeekQuiz.Di.SimpleInjectorInitializer), "Initialize")]
@@ -39,17 +37,17 @@ namespace GeekQuiz.Di
         }
         public static void Initialize()
         {
-            //var container = new Container();
-            //container.Options.DefaultScopedLifestyle = new WebRequestLifestyle();
+            var container = new Container();
+            container.Options.DefaultScopedLifestyle = new WebRequestLifestyle();
 
-            //InitializeContainer(container);
+            InitializeContainer(container);
 
-            //container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
+            container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
 
-            //container.Verify();
+            container.Verify();
 
 
-            //System.Web.Mvc.DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
+            System.Web.Mvc.DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
         }
 
         private static void InitializeContainer(Container container)

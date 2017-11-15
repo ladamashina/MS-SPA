@@ -23,7 +23,7 @@ namespace GeekQuiz.Core
     {
         
         public ApplicationDbContext()
-            : base("aspnet-GeekQuiz-20171031123123", throwIfV1Schema: false)
+            : base("name=DefaultConnection", throwIfV1Schema: false)
         {
             this.Configuration.ProxyCreationEnabled = false;
         }

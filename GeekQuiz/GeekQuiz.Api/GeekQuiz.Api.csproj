@@ -118,10 +118,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\aspnet-GeekQuiz-20171031123123.mdf" />
-    <Content Include="App_Data\aspnet-GeekQuiz-20171031123123_log.ldf">
-      <DependentUpon>aspnet-GeekQuiz-20171031123123.mdf</DependentUpon>
-    </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -143,6 +139,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

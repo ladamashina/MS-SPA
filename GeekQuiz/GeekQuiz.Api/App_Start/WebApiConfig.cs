@@ -22,13 +22,14 @@ namespace GeekQuiz.Api
             config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
             // Web API configuration and services
             config.EnableCors();
-            var formatters = GlobalConfiguration.Configuration.Formatters;
-            formatters.Remove(formatters.XmlFormatter);
-
-
-            var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
-            json.UseDataContractJsonSerializer = false;
-            json.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+          
+            config.Formatters.JsonFormatter.SerializerSettings.ContractResolver =
+                new CamelCasePropertyNamesContractResolver();
+            //var formatters = GlobalConfiguration.Configuration.Formatters;
+            //formatters.Remove(formatters.XmlFormatter);
+            //var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
+            //json.UseDataContractJsonSerializer = false;
+            //json.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             // Web API routes
             config.MapHttpAttributeRoutes();
 
