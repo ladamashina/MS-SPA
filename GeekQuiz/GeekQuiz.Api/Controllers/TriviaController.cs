@@ -10,9 +10,9 @@ namespace GeekQuiz.Api.Controllers
     
     public class TriviaController : ApiController
     {
-        private QuizOperator _qo;
+        private QuizOperatorQuestion _qo;
 
-        public TriviaController(QuizOperator qo)
+        public TriviaController(QuizOperatorQuestion qo)
         {
             _qo = qo;
         }
@@ -21,44 +21,34 @@ namespace GeekQuiz.Api.Controllers
 
         // GET api/Trivia
 
-        //[ResponseType(typeof(TriviaQuestion))]
+        
         public async Task<IHttpActionResult>Get()
         {
 
-            var nextQuestion =  await _qo.GetNextPunktAsync();
+            var nextQuestion = await _qo.GetNextPunktAsync();
 
             if (nextQuestion == null)
             {
-                return this.NotFound();
+                return NotFound();
             }
 
             return  Ok(nextQuestion);
         }
-        private async Task<bool> StoreAsync(TriviaAnswer answer)
-        {
-            //this._qr.TriviaAnswers.Add(answer);
+        
 
-            //await this._db.SaveChangesAsync();
-            //var selectedOption = await this._db.TriviaOptions.FirstOrDefaultAsync(o => o.Id == answer.OptionId
-            //                                                                          && o.QuestionId == answer.QuestionId);
-
-            //return selectedOption.IsCorrect;
-
-            return true;
-        }
-
-        [ResponseType(typeof(TriviaAnswer))]
+       // [ResponseType(typeof(TriviaAnswer))]
         public async Task<IHttpActionResult> Post(TriviaAnswer answer)
         {
             if (!ModelState.IsValid)
             {
-                return this.BadRequest(this.ModelState);
+                return BadRequest(ModelState);
             }
-
+            
             answer.UserId = User.Identity.Name;
 
-            var isCorrect = await this.StoreAsync(answer);
-            return this.Ok<bool>(isCorrect);
+            var result = await _qo.AnswerCheker(answer);
+            bool isCorrect = result.IsCorrect;
+            return Ok(isCorrect);
         }
     }
 }

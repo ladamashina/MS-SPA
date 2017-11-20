@@ -69,8 +69,8 @@ namespace GeekQuiz.Di
             container.Register<TriviaContext>(Lifestyle.Scoped);
             container.Register<QuestionRepository>(Lifestyle.Scoped);
             container.Register<AnswerRepository>(Lifestyle.Scoped);
-            container.Register<QuizOperator>(Lifestyle.Scoped);
-        }
+            container.Register<QuizOperatorQuestion>(Lifestyle.Scoped);
+           }
 
 
      
