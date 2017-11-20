@@ -6,12 +6,13 @@ using System.Web;
 using Microsoft.Owin;
 using SimpleInjector.Advanced;
 using System.Collections.Generic;
+using GeekQuiz.Layers.Api.operators;
 using SimpleInjector.Integration.Web;
 using SimpleInjector.Integration.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
-
+using GeekQuiz.Layers.Api.services;
 
 
 [assembly: WebActivator.PostApplicationStartMethod(typeof(GeekQuiz.Di.SimpleInjectorInitializer), "Initialize")]
@@ -66,6 +67,9 @@ namespace GeekQuiz.Di
             container.Register<IUserStore<ApplicationUser>>(() => new UserStore<ApplicationUser>(container.GetInstance<ApplicationDbContext>()), Lifestyle.Scoped);
 
             container.Register<TriviaContext>(Lifestyle.Scoped);
+            container.Register<QuestionRepository>(Lifestyle.Scoped);
+            container.Register<AnswerRepository>(Lifestyle.Scoped);
+            container.Register<QuizOperator>(Lifestyle.Scoped);
         }
 
 

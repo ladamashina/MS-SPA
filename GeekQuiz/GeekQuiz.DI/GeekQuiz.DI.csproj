@@ -163,6 +163,10 @@
       <Project>{96bd57b2-c841-4219-aceb-be33ab053aec}</Project>
       <Name>GeekQuiz.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GeekQuiz.Layers.Api\GeekQuiz.Layers.Api.csproj">
+      <Project>{A9C360FC-A70D-4A97-B341-7566E5AF5EFA}</Project>
+      <Name>GeekQuiz.Layers.Api</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\formtemplate.min.js" />

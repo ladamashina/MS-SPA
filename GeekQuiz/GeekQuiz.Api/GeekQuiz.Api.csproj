@@ -151,6 +151,10 @@
       <Project>{ebca3197-1640-476c-b0b9-48940a423340}</Project>
       <Name>GeekQuiz.DI</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GeekQuiz.Layers.Api\GeekQuiz.Layers.Api.csproj">
+      <Project>{A9C360FC-A70D-4A97-B341-7566E5AF5EFA}</Project>
+      <Name>GeekQuiz.Layers.Api</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

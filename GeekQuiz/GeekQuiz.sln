@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekQuiz.Core", "GeekQuiz.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekQuiz.Auth", "GeekQuiz.Auth\GeekQuiz.Auth.csproj", "{1589A2CF-F2F9-4B7B-BF79-DD0EA50A1930}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeekQuiz.Layers.Api", "GeekQuiz.Layers.Api\GeekQuiz.Layers.Api.csproj", "{A9C360FC-A70D-4A97-B341-7566E5AF5EFA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{1589A2CF-F2F9-4B7B-BF79-DD0EA50A1930}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1589A2CF-F2F9-4B7B-BF79-DD0EA50A1930}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1589A2CF-F2F9-4B7B-BF79-DD0EA50A1930}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9C360FC-A70D-4A97-B341-7566E5AF5EFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9C360FC-A70D-4A97-B341-7566E5AF5EFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9C360FC-A70D-4A97-B341-7566E5AF5EFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9C360FC-A70D-4A97-B341-7566E5AF5EFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

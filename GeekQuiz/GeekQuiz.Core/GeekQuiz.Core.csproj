@@ -85,8 +85,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IdentityConfig.cs" />
-    <Compile Include="IdentityModels.cs" />
+    <Compile Include="services\IdentityConfig.cs" />
+    <Compile Include="services\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TriviaAnswer.cs" />
     <Compile Include="TriviaContext.cs" />

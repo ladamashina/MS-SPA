@@ -378,7 +378,7 @@ namespace GeekQuiz.Controllers
             return View();
         }
 
-        protected override void Dispose(bool disposing)
+        protected override void Dispose(bool disposing) // improve?
         {
             if (disposing)
             {

@@ -20,17 +20,12 @@ namespace GeekQuiz.Api
             var config = new HttpConfiguration();
             app.UseWebApi(config);
             config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
-            // Web API configuration and services
+           
             config.EnableCors();
           
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver =
                 new CamelCasePropertyNamesContractResolver();
-            //var formatters = GlobalConfiguration.Configuration.Formatters;
-            //formatters.Remove(formatters.XmlFormatter);
-            //var json = GlobalConfiguration.Configuration.Formatters.JsonFormatter;
-            //json.UseDataContractJsonSerializer = false;
-            //json.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-            // Web API routes
+          
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
